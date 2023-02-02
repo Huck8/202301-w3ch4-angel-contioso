@@ -1,18 +1,18 @@
 export default class Component {
-  #element: HTMLElement;
   #parentElement: HTMLElement | undefined;
+  protected element: HTMLElement;
 
   constructor(
     parentElement: HTMLElement | undefined,
     tag: string,
-    cssClasses: ""
+    cssClasses: string = undefined
   ) {
     this.#parentElement = parentElement;
-    this.#element = document.createElement(tag);
-    this.#element.className = cssClasses;
+    this.element = document.createElement(tag);
+    this.element.className = cssClasses;
   }
 
   render() {
-    this.#parentElement?.appendChild(this.#element);
+    this.#parentElement?.appendChild(this.element);
   }
 }
