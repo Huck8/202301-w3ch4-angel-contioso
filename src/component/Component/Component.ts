@@ -5,11 +5,11 @@ export default class Component {
   constructor(
     parentElement: HTMLElement | undefined,
     tag: string,
-    cssClass = ""
+    cssClasses: ""
   ) {
     this.#parentElement = parentElement;
     this.#element = document.createElement(tag);
-    this.#element.className = cssClass;
+    this.#element.className = cssClasses;
   }
 
   render() {
